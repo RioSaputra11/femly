@@ -3,8 +3,8 @@ global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your numbe
 global.mods = JSON.parse(fs.readFileSync('./src/moderator.json')) // Want some help?
 
 global.kontak = [
-['6281320170984', '𝘼𝙜𝙪𝙯 𝙁𝙖𝙢𝙞𝙡𝙞𝙖', true],
-['6285157436653', '𝙴𝙽𝙹𝙴𝙻𝙰-𝙱𝙾𝚃', true]
+['6282117332347', 'Rio Saputra', true],
+['6282119094904', 'Ryobot-md', true]
 ]
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -33,17 +33,17 @@ global.APIKeys = { // APIKey Here
   'https://leyscoders-api.herokuapp.com': 'apikeylu'
 }
 
-//global.wm = '𝑴𝒚𝑩𝒐𝒕-𝑴𝒖𝒍𝒕𝒊 𝑫𝒆𝒗𝒊𝒄𝒆 𝑩𝒚 𝑭𝒐𝒌𝒖𝒔𝑰𝑫'
+//global.wm = 'Ryobot-md by Rio saputra'
 global.wait = '_*𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
 global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 
 //========Url Template Buttons=========//
 global.dtu = '𝑭𝒐𝒍𝒍𝒐𝒘'
-global.urlnya = "https://www.instagram.com/aguzfamilia"
+global.urlnya = "https://instagram.com/riosapuuttrraa_?igshid=YmMyMTA2M2Y="
 
 //============= callButtons =============//
 global.dtc = '𝒄𝒂𝒍𝒍 𝒐𝒘𝒏𝒆𝒓'
-global.phn = '+62 813-2017-0984'
+global.phn = '+62 821-1909-4904'
 
 //============= Games ================//
 global.benar = '_*Benar✅*_'
