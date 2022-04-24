@@ -30,14 +30,14 @@ module.exports = {
         global.namabot = conn.user.name
         global.packname = global.namabot
         global.author = global.data.owner
-        //global.author = 'Ryobot-md'
+        //global.author = 'Rio Saputra'
         global.wm2 = global.data.namabot + ' ' + global.data.owner
-        global.wm = namabot + ' ву Ryobot-md'
+        global.wm = namabot + ' ву ƒσкυѕ ι∂'
         global.colong1 = 'Ciss 📸'
-        global.colong2 = 'ʙy rio saputra'
+        global.colong2 = 'ʙy ᴀɢᴜᴢ ꜰᴀᴍɪʟɪᴀ'
         global.kontak2 = [
-        ['6282117332347', 'Rio saputra', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'riogans011@gmail.com', true],
-        ['6282119094904', 'Ryobot-md', 'Bot WhatsApp', 'Nothing!', true],1
+        ['6282117332347', '𝘼𝙜𝙪𝙯 𝙁𝙖𝙢𝙞𝙡𝙞𝙖', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'riogans011@gmail.com', true],
+        ['6282119094904', 'Ryobot-Md', 'Bot WhatsApp', 'Nothing!', true],
         ]
         global.bg = await (await fetch(img)).buffer()
         global.time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
@@ -165,7 +165,7 @@ module.exports = {
                     healt: 100,
                     level: 1,
                     exp: 0,
-                    limit: 20,
+                    limit: 10,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
@@ -456,8 +456,8 @@ module.exports = {
                     if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
                         let chat = global.db.data.chats[m.chat]
                         let user = global.db.data.users[m.sender]
-                        if (name != 'unbanchat.js' && chat && chat?.isBanned) return // Except this
-                        if (name != 'unbanuser.js' && user && user?.banned) return
+                        if (name != 'o-unbanchat.js' && chat && chat?.isBanned) return // Except this
+                        if (name != 'o-unbanuser.js' && user && user?.banned) return
                     }
                     if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Both Owner
                         fail('owner', m, this)
@@ -711,8 +711,8 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = async (type, m, conn) => {
     let msg = {
-        rowner: `Maaf ya Sayang perintah ini hanya untuk _*OWNER!1!1!*_`,
-        owner: `Maaf ya sayang perintah ini hanya untuk _*OWNER!1!1!*_`,
+        rowner: `Perintah ini hanya dapat digunakan oleh _*Owner Bot!1!1!*_`,
+        owner: `Perintah ini hanya dapat digunakan oleh _*Owner Bot!1!1!*_`,
         mods: `Perintah ini hanya dapat digunakan oleh *Moderator*`,
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
         group: `Perintah ini hanya dapat digunakan di grup!`,
@@ -720,8 +720,8 @@ global.dfail = async (type, m, conn) => {
         admin: 'Perintah ini hanya untuk *Admin* grup!',
         botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
         unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        nsfw: `NSFW tidak aktif, Silahkan hubungi *OWNER* bot untuk mengaktifkan fitur ini!`,
-        rpg: `RPG tidak aktif, Silahkan hubungi *OWNER* bot Untuk mengaktifkan fitur ini!`,
+        nsfw: `NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
+        rpg: `RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
         restrict: 'Fitur ini di *disable*!'
     }[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })
@@ -745,7 +745,7 @@ function ucapan() {
         res = "Selamat pagi 🌄"
     }
     if (time > 10) {
-        res = "Selamat siang ☀️"
+        res = "Selamat siang 🥵"
     }
     if (time >= 15) {
         res = "Selamat sore 🌅"
