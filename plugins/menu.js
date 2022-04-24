@@ -33,7 +33,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'anime', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -47,7 +47,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'nsfw': 'Nsfw',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -55,8 +55,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'audio': 'Pengubah Suara',
-    'jadibot': 'Jadi Bot',
+    'penubah suara': 'Pengubah Suara',
+    'anime': 'Anime',
     'info': 'Info',
     '': 'Tanpa Kategori',
   }
@@ -88,8 +88,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
   }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Nsfw'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
@@ -113,8 +113,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
   }
-  if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+  if (teks == 'anime') tags = {
+    'Anime': 'Anime'
   }
   if (teks == 'info') tags = {
     'info': 'Info'
@@ -193,13 +193,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Game', rowId: `${_p}? game` },
           { title: 'XP', rowId: `${_p}? xp` },
           { title: 'Stiker', rowId: `${_p}? stiker` },
+          { title: 'Anime(≧▽≦)', rowId: `${_p}? anime` },
           { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
           { title: 'Quotes', rowId: `${_p}? quotes` },
           { title: 'Grup', rowId: `${_p}? grup` },
+          { title: 'Nsfw🔞', rowId: `${_p}? nsfw` },
           { title: 'Premium', rowId: `${_p}? premium` },
           { title: 'Internet', rowId: `${_p}? internet` },
           { title: 'Anonymous', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', rowId: `${_p}? nulis` },
           { title: 'Downloader', rowId: `${_p}? downloader` },
           { title: 'Tools', rowId: `${_p}? tools` },
           { title: 'Fun', rowId: `${_p}? fun`},
@@ -207,7 +208,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Vote & Absen', rowId: `${_p}? vote` },
           { title: "Al-Qur\'an", rowId: `${_p}? quran` },
           { title: 'Pengubah Suara', rowId: `${_p}? audio` },
-          { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
           { title: 'Info', rowId: `${_p}? info` },
           { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
           { title: 'Owner', rowId: `${_p}? owner` },
