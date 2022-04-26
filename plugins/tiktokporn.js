@@ -16,7 +16,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
 🛰 *Source:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${"https://tikporntok.com/"+source}`)).data}
 🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${"https://tikporntok.com/"+video}`)).data}`
   } finally {
-  if("https://tikporntok.com/"+video) conn.sendBV(m.chat, sel, wm, "https://tikporntok.com/"+video, [['Next', '.tiktokporn']], m, {jpegThumbnail: await(await fetch("https://tikporntok.com/"+thumb)).buffer()})
+  if("https://tikporntok.com/"+video) conn.sendB(m.chat, `Maaf media ${command} tidak ditemukan silahkan ulangi!`, wm, null, [["Repeat",  ".tiktokporn"]], m) 
   else return conn.sendB(m.chat, `Maaf media ${command} tidak ditemukan silahkan ulangi!`, wm, null, [["Repeat",  ".tiktokporn"]], m) 
  }
 }
