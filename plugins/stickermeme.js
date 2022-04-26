@@ -16,6 +16,6 @@ handler.help = ['stickermeme <teks>|<teks>']
 handler.tags = ['sticker']
 handler.command = /^(s(tic?ker)?me(me)?)$/i
 
-handler.limit = false
+handler.limit = true
 
 module.exports = handler
