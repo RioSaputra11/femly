@@ -17,7 +17,7 @@ Ketik ${usedPrefix}hint untuk bantuan
 Bonus: ${poin} XP
     `.trim()
   conn.tebakgambar[id] = [
-    await conn.sendBI(m.chat, caption, wm, json.img, [['Bantuan', '.hint']], m, {jpegThumbnail: await(await fetch(json.img)).buffer()}),
+    await conn.sendBI(m.chat, caption, wm, json.img, [['Bantuan', '.ao']], m, {jpegThumbnail: await(await fetch(json.img)).buffer()}),
     json, poin,
     setTimeout(async () => {
       if (conn.tebakgambar[id]) await conn.sendB(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, null, [['Tebak Gambar', '.tebakgambar']], conn.tebakgambar[id][0])
