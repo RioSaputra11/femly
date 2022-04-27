@@ -1,47 +1,11 @@
-let fetch = require('node-fetch')
-
-const artinama_api = [
-  ['xteam', '/primbon/artinama', 'q', 'APIKEY', json => {
-    if (!json.status) throw json
-    return `
-*Nama:* ${json.result.nama}
-*Arti:* ${json.result.arti}
-
-*Makna:* ${json.result.maksud}
-`.trim()
-  }],
-  ['http://nzcha-apii.herokuapp.com', '/artinama', 'nama', null, json => {
-    if (!json.status) throw json
-    return `
-*Arti:* ${json.result}
-`.trim()
-  }],
-  ['https://scrap.terhambar.com', '/nama', 'n', null, json => {
-    if (!json.status) throw json
-    return `
-*Arti:* ${json.result.arti}
-`.trim()
-  }]
-]
-
-let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `Contoh:\n${usedPrefix + command} agus`
-  let result = ''
-  for (let [origin, pathname, query, apikey, fn] of artinama_api) {
-    try {
-      let res = await fetch(global.API(origin, pathname, { [query]: text }, apikey))
-      if (!res.ok) throw res.text()
-      let json = await res.json()
-      result = await fn(json)
-      break
-    } catch (e) {
-      lastErr = e
-    }
-  }
-  m.reply(result)
+const { artinama } = require('@bochilteam/scraper')
+let handler = async (m, { usedPrefix, command, conn, text }) => {
+  if (!text) throw `uhm.. namanya?\n\ncontoh:\n${usedPrefix + command} rasel`
+  var name = await artinama(text)
+  conn.sendTBL(m.chat, name, 'Artinama by ' + wm, fla + text, 'Anu', urlnya, null, m)
 }
-handler.help = ['artinama'].map(v => v + ' [nama]')
+handler.help = ['artinama'].map(v => v + ' <name>')
 handler.tags = ['kerang']
-handler.command = ['artinama']
+handler.command = /^artiname?a?$/i
 
 module.exports = handler
