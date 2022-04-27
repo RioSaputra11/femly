@@ -1,26 +1,30 @@
+let fetch = require('node-fetch')
+
 let timeout = 120000
 let poin = 500
-let handler = async (m, { conn, command, usedPrefix }) => {
+let handler = async (m, { conn, usedPrefix }) => {
     conn.siapakahaku = conn.siapakahaku ? conn.siapakahaku : {}
     let id = m.chat
     if (id in conn.siapakahaku) {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.siapakahaku[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json')).json()
-    let json = src[Math.floor(Math.random() * src.length)]
+    let res = await fetch(global.API('xteam', '/game/siapakahaku', {}, 'APIKEY'))
+    if (res.status !== 200) throw await res.text()
+    let json = await res.json()
+    if (!json.status) throw json
     let caption = `
-${json.soal}
+Siapakah aku? ${json.result.soal}
 
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}who untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.siapakahaku[id] = [
-        await conn.sendBL(m.chat, caption, wm, fla + `siapakah aku`, [['Bantuan', '.who']], m),
+        await conn.reply(m.chat, caption, m),
         json, poin,
-        setTimeout(async () => {
-            if (conn.siapakahaku[id]) await conn.sendB(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, null, [[`Siapakah Aku`, `${usedPrefix}siapakahaku`]], conn.siapakahaku[id][0])
+        setTimeout(() => {
+            if (conn.siapakahaku[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.result.jawaban}*`, conn.siapakahaku[id][0])
             delete conn.siapakahaku[id]
         }, timeout)
     ]
