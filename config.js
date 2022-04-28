@@ -2,10 +2,6 @@ let fs = require('fs')
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./src/moderator.json')) // Want some help?
 
-global.kontak = [
-['6282117332347', 'Rio Saputra', true],
-['6282119094904', 'Ryobot-md', true]
-]
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -29,20 +25,20 @@ global.APIKeys = { // APIKey Here
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apikeylu',
   'https://pencarikode.xyz': 'apikeylu',
-  'https://hardianto.xyz': 'apikeylu',
+  'https://hardianto.xyz': 'hardianto',
   'https://leyscoders-api.herokuapp.com': 'apikeylu'
 }
 
-//global.wm = 'Ryobot-md by Rio saputra'
-global.wait = '_*𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
-global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
+//global.wm = '𝑴𝒚𝑩𝒐𝒕-𝑴𝒖𝒍𝒕𝒊 𝑫𝒆𝒗𝒊𝒄𝒆 𝑩𝒚 𝒓𝒊𝒐 𝒔𝒂𝒑𝒖𝒕𝒓𝒂'
+global.wait = '_*𝑺𝒆𝒅𝒂𝒏𝒈 𝒅𝒊 𝒑𝒓𝒐𝒔𝒆𝒔 𝒎𝒐𝒉𝒐𝒏 𝒕𝒖𝒏𝒈𝒈𝒖 𝒔𝒆𝒃𝒆𝒏𝒕𝒂𝒓 ...*_'
+global.eror = '_*𝑴𝒂𝒂𝒇 𝑺𝒆𝒓𝒗𝒆𝒕 𝑻𝒊𝒅𝒂𝒌 𝑺𝒕𝒂𝒃𝒊𝒍..*_'
 
 //========Url Template Buttons=========//
-global.dtu = '𝑭𝒐𝒍𝒍𝒐𝒘'
+global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
 global.urlnya = "https://instagram.com/riosapuuttrraa_?igshid=YmMyMTA2M2Y="
 
 //============= callButtons =============//
-global.dtc = '𝒄𝒂𝒍𝒍 𝒐𝒘𝒏𝒆𝒓'
+global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
 global.phn = '+62 821-1909-4904'
 
 //============= Games ================//
