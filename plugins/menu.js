@@ -6,7 +6,7 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┌─〔 %me 〕
-├ *${ucapan()} %name*
+├ *${global.ucapan} %name*
 │
 ├ Tersisa *%limit Limit*
 ├ Role *%role*
@@ -14,7 +14,6 @@ const defaultMenu = {
 ├ %totalexp XP secara Total
 │
 ├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
 ├ Waktu: *%time*
 │
 ├ Uptime: *%uptime (%muptime)*
@@ -55,7 +54,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'penubah suara': 'Pengubah Suara',
+    'audio': 'Pengubah Suara',
     'anime': 'Anime',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -114,7 +113,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Pengubah Suara'
   }
   if (teks == 'anime') tags = {
-    'Anime': 'Anime'
+    'anime': 'Anime'
   }
   if (teks == 'info') tags = {
     'info': 'Info'
@@ -184,33 +183,33 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let judul = `${ucapan()}, ${name}`.trim()
+      let judul = `${global.ucapan}, ${name}`.trim()
       const sections = [
       {
         title: 'List Menu ' + namabot,
         rows: [
           { title: 'Semua Perintah', rowId: `${_p}? all` },
-          { title: 'Game', rowId: `${_p}? game` },
-          { title: 'XP', rowId: `${_p}? xp` },
-          { title: 'Stiker', rowId: `${_p}? stiker` },
-          { title: 'Anime(≧▽≦)', rowId: `${_p}? anime` },
-          { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
-          { title: 'Quotes', rowId: `${_p}? quotes` },
-          { title: 'Grup', rowId: `${_p}? grup` },
-          { title: 'Nsfw🔞', rowId: `${_p}? nsfw` },
-          { title: 'Premium', rowId: `${_p}? premium` },
-          { title: 'Internet', rowId: `${_p}? internet` },
-          { title: 'Anonymous', rowId: `${_p}? anonymous` },
-          { title: 'Downloader', rowId: `${_p}? downloader` },
+          { title: 'Menu Game', rowId: `${_p}? game` },
+          { title: 'Menu Xp & Limit'', rowId: `${_p}? xp` },
+          { title: 'Menu Stiker', rowId: `${_p}? stiker` },
+          { title: 'Menu Anime', rowId: `${_p}? anime` },
+          { title: 'Menu Kerang Ajaib', rowId: `${_p}? kerangajaib` },
+          { title: 'Menu Quotes', rowId: `${_p}? quotes` },
+          { title: 'Menu Grup', rowId: `${_p}? grup` },
+          { title: 'Menu Nsfw🔞', rowId: `${_p}? nsfw` },
+          { title: 'Menu Premium', rowId: `${_p}? premium` },
+          { title: 'Menu Internet', rowId: `${_p}? internet` },
+          { title: 'Menu Anonymous', rowId: `${_p}? anonymous` },
+          { title: 'Menu Downloader', rowId: `${_p}? downloader` },
           { title: 'Tools', rowId: `${_p}? tools` },
-          { title: 'Fun', rowId: `${_p}? fun`},
+          { title: 'Menu Fun', rowId: `${_p}? fun`},
           { title: 'Database', rowId: `${_p}? database` },
-          { title: 'Vote & Absen', rowId: `${_p}? vote` },
-          { title: "Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
+          { title: 'Menu Vote & Absen', rowId: `${_p}? vote` },
+          { title: "Menu Al-Qur\'an", rowId: `${_p}? quran` },
+          { title: 'Menu Pengubah Suara', rowId: `${_p}? audio` },
           { title: 'Info', rowId: `${_p}? info` },
           { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
-          { title: 'Owner', rowId: `${_p}? owner` },
+          { title: 'Menu Kusus Owner', rowId: `${_p}? owner` },
         ]
       }
     ]
@@ -312,10 +311,10 @@ function ucapan() {
     res = "Selamat pagi🌞"
   }
   if (time > 10) {
-    res = "Selamat siang🥵"
+    res = "Selamat siang☀️"
   }
   if (time >= 15) {
-    res = "Selamat sore🌇"
+    res = "Selamat sore🌝"
   }
   if (time >= 18) {
     res = "Selamat malam🌛"
