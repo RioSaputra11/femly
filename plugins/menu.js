@@ -190,7 +190,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         rows: [
           { title: 'Semua Perintah', rowId: `${_p}? all` },
           { title: 'Menu Game', rowId: `${_p}? game` },
-          { title: 'Menu Xp & Limit'', rowId: `${_p}? xp` },
+          { title: 'Menu XP & Limit', rowId: `${_p}? xp` },
           { title: 'Menu Stiker', rowId: `${_p}? stiker` },
           { title: 'Menu Anime', rowId: `${_p}? anime` },
           { title: 'Menu Kerang Ajaib', rowId: `${_p}? kerangajaib` },
@@ -202,7 +202,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Menu Anonymous', rowId: `${_p}? anonymous` },
           { title: 'Menu Downloader', rowId: `${_p}? downloader` },
           { title: 'Tools', rowId: `${_p}? tools` },
-          { title: 'Menu Fun', rowId: `${_p}? fun`},
+          { title: 'Fun', rowId: `${_p}? fun`},
           { title: 'Database', rowId: `${_p}? database` },
           { title: 'Menu Vote & Absen', rowId: `${_p}? vote` },
           { title: "Menu Al-Qur\'an", rowId: `${_p}? quran` },
@@ -314,10 +314,10 @@ function ucapan() {
     res = "Selamat siang☀️"
   }
   if (time >= 15) {
-    res = "Selamat sore🌝"
+    res = "Selamat sore🌄"
   }
   if (time >= 18) {
-    res = "Selamat malam🌛"
+    res = "Selamat malam🌝"
   }
   return res
 }
