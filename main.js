@@ -14,6 +14,7 @@ const _ = require('lodash')
 const syntaxerror = require('syntax-error')
 const P = require('pino')
 const os = require('os')
+const chalk = require('chalk')
 let simple = require('./lib/simple')
 var low
 try {
@@ -75,7 +76,8 @@ const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   logger: P({ level: 'silent'}),
-  version: [2, 2204, 13]
+  version: [2, 2204, 13],
+  browser: ['Family-MD', 'IOS', '4.1.0']
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
@@ -90,14 +92,18 @@ if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { smal
 if (opts['server']) require('./server')(global.conn, PORT)
 
 async function connectionUpdate(update) {
-  console.log(require('chalk').redBright('Mengaktifkan Bot, Harap tunggu sebentar...'))
   const { connection, lastDisconnect } = update
+  if (connection == 'connecting') console.log(chalk.redBright('🕛 Mengaktifkan Bot, Harap tunggu sebentar...'))
+  if (connection == 'open') {
+      console.log(chalk.green('Connected✅'))
+      await conn.hehe("6281320170984@s.whatsapp.net", global.ftoli)
+  }
+  if (connection == 'close') console.log(chalk.red('⏹️Koneksi berhenti dan mencoba menghubungkan kembali...'))
   global.timestamp.connect = new Date
   if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== WebSocket.CONNECTING) {
     console.log(global.reloadHandler(true))
   }
   if (global.db.data == null) await loadDatabase()
-    await conn.hehe("6281320170984@s.whatsapp.net", global.ftoli)
   //console.log(JSON.stringify(update, null, 4))
 }
 
